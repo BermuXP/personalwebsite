@@ -1,0 +1,13 @@
+version: '3.5'
+services:
+    php-apache-environment:
+        container_name: php
+        image: php:7.4-apache
+        ports:
+            - 80:80
+        volumes:
+            - ../files:/var/www/html
+        environment:
+            XDEBUG_MODE: "develop,debug"
+            XDEBUG_CONFIG: "client_host=host.docker.internal client_port=9000 start_with_request=yes idekey=VSCODE"
+            XDEBUG_SESSION: VSCODE

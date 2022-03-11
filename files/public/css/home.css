@@ -1,0 +1,145 @@
+.parallax {
+    /* The image used */
+    background-image: url("../../public/img/parallax.jpg");
+    /* Set a specific height */
+    min-height: 500px;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px #ececec91;
+}
+
+.parallax-header {
+    position: absolute;
+    z-index: 1000;
+    top: 100px;
+    text-align: center;
+    width: 100%;
+}
+
+.parallax-content {
+    display: table;
+    margin: 0 auto;
+}
+
+.parallax-content>div.row {
+    margin-top: 60px;
+}
+
+.parallax-content>h1 {
+    font-weight: 400;
+    font-size: 4.2rem;
+    line-height: 110%;
+    margin: 2.1rem 0 1.68rem 0;
+}
+
+.h2-head,
+.h2-head-clear {
+    margin-top: 25px;
+    color: #ffffff;
+    text-align: center;
+}
+
+h2.h2-head-clear {
+    color: #000000;
+}
+
+p {
+    color: #ffffff;
+}
+
+a.games-link {
+    color: #6795d6;
+    text-decoration: none;
+}
+
+a.games-link:hover {
+    color: #6795d6;
+    text-decoration: none;
+}
+
+.clear-bg {
+    background-color: unset;
+}
+
+.main-image {
+    border-radius: 50%;
+    width: 50%;
+    height: auto;
+    border: 3px solid #000000;
+}
+
+.tab-fixer {
+    margin-bottom: 60px;
+    margin-top: 30px;
+}
+
+div.bg-opposite {
+    background-color: #aeaaaa;
+    margin-bottom: 120px;
+}
+
+a.btn.btn-android {
+    background-color: #79C257;
+    color: white;
+}
+
+a.btn.btn-android:hover {
+    background-color: #abe292;
+}
+
+a.btn.btn-website:hover {
+    background-color: #87abf3;
+}
+
+a.btn.btn-website {
+    background-color: #5b85d9;
+    color: white;
+}
+
+.card-img-resize {
+    display: table;
+    margin: 0 auto;
+    max-width: 100px;
+    max-height: 150px;
+    margin-top: 20px
+}
+
+p.card-text {
+    color: #000000;
+}
+
+div.card {
+    background-color: #dee2e9;
+}
+
+div.card-before {
+    border-radius: 10px;
+    margin-top: 30px;
+    margin-bottom: 35px;
+}
+
+div.btn-row {
+    margin-bottom: 20px
+}
+.btn-row-header>a {
+    color: #2e2c2c;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.btn-row-header>a:hover {
+    color: #828282;
+}
+
+a.btn.btn-github:hover {
+    background-color: #abadb0;
+
+}
+
+a.btn.btn-github {
+    background-color: #666768;
+    color: white;
+}
