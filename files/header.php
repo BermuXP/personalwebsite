@@ -50,6 +50,9 @@
                 <li class="nav-item">
                     <a class="nav-link hover-underline-animation" href="#contact"><?php echo 'Contact'; ?></a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link hover-underline-animation" target="_blank" href="../public/pdf/resume.pdf"><?php echo 'Resume (PDF)'; ?></a>
+                </li>
             </ul>
         </div>
     </nav>

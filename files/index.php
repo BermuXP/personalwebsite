@@ -212,7 +212,7 @@ $projects =
         <img class='main-image' src='../public/img/leonweiss.jpg'>
         <h1 class="header blue-text">Leon Weiss</h1>
         <div class='btn-row-header'>
-            <a href='https://github.com/BermuXP'><i class="fa-brands fa-xl fa-github"></i></a>
+            <a href='https://github.com/BermuXP' target='_blank'><i class="fa-brands fa-xl fa-github"></i></a>
             <a href="mailto:leonweiss@live.nl"><i class="fa-solid fa-xl fa-envelope"></i></a>
         </div>
     </div>
@@ -223,19 +223,17 @@ $projects =
             <h2 class='h2-head'>About me</h2>
             <p>
                 Hi there!, my name is Leon Weiss, as the website/title suggests, I'll keep it short in this description about myself, so if you want to know more, I suggest to take a look at the work I've done down below!
-                Lets get to it, I'm currenly a Software Developer at <a class='games-link hover-underline-animation' target='_blank' href='https://emerald-it.nl'>Emerald-it</a> where I've been working for about ~5 years,
+                Lets get to it, I'm currenly a Software Developer at <a class='games-link hover-underline-animation' target='_blank' href='https://emerald-it.nl/'>Emerald-it</a> where I've been working for about ~5 years,
                 in this work place I've learned alot about Web/App development since that's the expertise of the company.</p>
             <p>
                 I'm <?php echo $year->y; ?> years old, I love playing games, as of right now I'm playing
                 <?php
-                $firstGame = true;
                 foreach ($games as $game) {
                 ?>
                     <a class='games-link hover-underline-animation' target='_blank' href='<?php echo $game['link']; ?>'><?php echo $game['name']; ?></a>
                 <?php
                     if (!isset($game['last'])) {
-                        echo ",";
-                        $firstGame = false;
+                        echo ',';
                     } else {
                         echo '.';
                     }
@@ -263,8 +261,6 @@ $projects =
         </div>
     </div>
 </div>
-
-
 
 <div class='col-md-12' id='projects'>
     <div class='container tab-fixer'>
@@ -330,6 +326,9 @@ $projects =
 <div class='col-md-12' id='contact'>
     <div class='container tab-fixer'>
         <div class='content-section row center'>
+            <div class='error-div text-center'>
+                As of right now this form doesn't work, if you'd like to reach me send me an email at <a href='mailto:leon@leonweiss.nl'>leon@leonweiss.nl</a>.
+            </div>
             <?php if (!empty($errorArr)) { ?>
                 <div class='text-center <?php if (isset($errorArr['error']) && $errorArr['error'] === true) {
                                             echo 'error-div';
