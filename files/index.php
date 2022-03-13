@@ -7,12 +7,10 @@ $year = $currentDate->diff($birthDate);
 $errorArr = [];
 
 if ($_POST) {
-    $name = "";
     $emailBody = "<div>";
     if (isset($_POST['name'])) {
-        $name =  htmlspecialchars($_POST['name']);
-        $emailBody .= "<div>
-                            <label><b>Visitor Name:</b></label>&nbsp;<span>" . $name . "</span>
+        $emailBody .=  "<div>
+                            <label><b>Name:</b></label>&nbsp;<span>" . htmlspecialchars($_POST['name']) . "</span>
                         </div>";
     }
 
@@ -20,21 +18,23 @@ if ($_POST) {
         $email = str_replace(array("\r", "\n", "%0a", "%0d"), '', $_POST['email']);
         $email = filter_var($email, FILTER_VALIDATE_EMAIL);
         $emailBody .= "<div>
-                            <label><b>Visitor Email:</b></label>&nbsp;<span>" . $email . "</span>
+                            <label><b>Email:</b></label>&nbsp;<span>" . $email . "</span>
                         </div>";
     }
 
     if (isset($_POST['message'])) {
         $emailBody .= "<div>
-                            <label><b>Visitor Message:</b></label>
+                            <label><b>Message:</b></label>
                             <div>" . htmlspecialchars($_POST['message']) . "</div>
                         </div>";
     }
     $emailBody .= "</div>";
 
-    $headers  = 'MIME-Version: 1.0' . "\r\n"
-        . 'Content-type: text/html; charset=utf-8' . "\r\n"
-        . 'From: ' . $email . "\r\n";
+    $headers = [
+        'From: leon@leonweiss.nl',
+        'Reply-To: leon@leonweiss.nl',
+        'X-Mailer: PHP/' . phpversion()
+    ];
 
     if (mail("leonweis@live.nl", "Contact Form from leonweiss.nl", $emailBody, $headers)) {
         $errorArr['error'] = false;
@@ -49,6 +49,7 @@ $games = [
     ['link' => 'https://www.satisfactorygame.com/', 'name' => 'Satisfactory'],
     ['link' => 'https://store.steampowered.com/app/1245620/ELDEN_RING/', 'name' => 'Elden Ring'],
     ['link' => 'https://store.steampowered.com/app/294100/RimWorld/', 'name' => 'Rimworld'],
+    ['link' => 'https://www.leagueoflegends.com/', 'name' => 'League of Legends'],
     ['link' => 'https://www.finalfantasyxiv.com/', 'name' => 'Final Fantasy XIV', 'last' => true]
 ];
 
@@ -253,7 +254,7 @@ $projects =
             <div class='skills'>
                 <?php foreach ($skills as $skill) { ?>
                     <span class='skill'>
-                        <a href='<?= $skill['url']; ?>' class='hover-underline-animation dark'>
+                        <a href='<?= $skill['url']; ?>' target='_blank' class='hover-underline-animation dark'>
                             <?= $skill['title']; ?>
                         </a>
                     </span>
@@ -331,10 +332,10 @@ $projects =
         <div class='content-section row center'>
             <?php if (!empty($errorArr)) { ?>
                 <div class='text-center <?php if (isset($errorArr['error']) && $errorArr['error'] === true) {
-                                echo 'error-div';
-                            } else {
-                                echo 'success-div';
-                            } ?>'>
+                                            echo 'error-div';
+                                        } else {
+                                            echo 'success-div';
+                                        } ?>'>
                     <?= $errorArr['msg'] ?>
                 </div>
             <?php } ?>
@@ -344,14 +345,14 @@ $projects =
             <div>
                 <form method="post" class='contact-form'>
                     <div class="form-group mb-2">
-                        <label for="name">Your Name</label>
+                        <label for="name">Name:</label>
                         <input class='form-control' type="text" id="name" name="name" placeholder="John Doe" required>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Your E-mail</label>
+                    <div class="form-group mb-2">
+                        <label for="email">Email: </label>
                         <input class='form-control' type="email" id="email" name="email" placeholder="john.doe@email.com" required>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group mb-2">
                         <label for="message">Message:</label>
                         <textarea class="form-control" rows='3' id="message" name="message" placeholder="Say whatever you want." required></textarea>
                     </div>
