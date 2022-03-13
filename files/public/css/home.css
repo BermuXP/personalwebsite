@@ -1,9 +1,6 @@
 .parallax {
-    /* The image used */
     background-image: url("../../public/img/parallax.jpg");
-    /* Set a specific height */
     min-height: 500px;
-    /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -142,4 +139,42 @@ a.btn.btn-github:hover {
 a.btn.btn-github {
     background-color: #666768;
     color: white;
+}
+
+div.skills {
+    display: inline-block;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 35px;
+}
+
+span.skill>a {
+    color: #161616; 
+    font-weight: bold;
+    text-decoration: none;
+}
+
+span.skill {
+    padding: 12px;
+    font-size: 20px;
+    background-color: rgb(222,226,233);
+    border: 1px solid #3d3c3c;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.contact-form label {
+    color:#ffffff;
+}
+
+div.btn-row {
+    margin-top: 20px;
+}
+
+.error-div {
+    color: rgb(166, 66, 66);
+}
+
+.success-div {
+    color: #408940;
 }

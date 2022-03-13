@@ -22,6 +22,10 @@ a#logo {
     transition: transform 0.25s ease-out;
 }
 
+a.hover-underline-animation.dark:after {
+    background-color: #0d0d0e;
+}
+
 .hover-underline-animation:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;

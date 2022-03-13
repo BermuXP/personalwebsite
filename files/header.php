@@ -44,6 +44,12 @@
                 <li class="nav-item">
                     <a class="nav-link hover-underline-animation" href="#projects"><?php echo 'Projects'; ?></a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link hover-underline-animation" href="#skills"><?php echo 'Skills'; ?></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link hover-underline-animation" href="#contact"><?php echo 'Contact'; ?></a>
+                </li>
             </ul>
         </div>
     </nav>
